@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meli el perrito</title>
+
     <style>
         * {
             box-sizing: border-box;
@@ -43,12 +44,8 @@
             height: 100%;
             object-fit: cover;
             animation: spin 8s linear infinite;
-        }
-
-        h1 {
-            margin: 10px 0 6px;
-            font-size: 22px;
-            color: #333333;
+            cursor: pointer;
+            user-select: none;
         }
 
         .label {
@@ -84,6 +81,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         <div class="avatar">
@@ -98,5 +96,15 @@
 
         <p class="label">Hecho por Maris</p>
     </div>
+
+    <script>
+        const avatar = document.querySelector('.avatar img');
+        let duration = 8;
+
+        avatar.addEventListener('click', () => {
+            duration *= 0.85;
+            avatar.style.animationDuration = duration + 's';
+        });
+    </script>
 </body>
 </html>
